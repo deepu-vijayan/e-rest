@@ -1,1 +1,1 @@
-var erestaurant = angular.module('erestaurant', ['ui.router','ngMaterial', 'ngAnimate']);
+var erestaurant = angular.module('erestaurant', ['ui.router','ngMaterial', 'ngAnimate', 'md.data.table']);
