@@ -1,0 +1,19 @@
+{
+  "name": "e-restaurant",
+  "version": "1.0.0",
+  "description": "An application to manage restaurant",
+  "main": "app.js",
+  "dependencies": {
+    "bower": "^1.8.2",
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "restaurant"
+  ],
+  "author": "Deepu Vijayan",
+  "license": "MIT"
+}

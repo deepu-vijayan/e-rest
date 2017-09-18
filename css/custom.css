@@ -1,0 +1,20 @@
+
+.login-container {
+	align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: url("../img/restaurant.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position:50% 50%;
+  
+}
+.login-container md-content{
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	flex: none;
+	background-color: transparent;
+}
