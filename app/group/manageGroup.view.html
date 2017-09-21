@@ -1,37 +1,37 @@
-<md-toolbar class="md-table-toolbar md-default">
-        <div class="md-toolbar-tools">
-          <span>Nutrition</span>
-        </div>
-      </md-toolbar>
-      
-      <!-- exact table from live demo -->
-      <md-table-container>
-        <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
-          <thead md-head md-order="query.order" md-on-reorder="getDesserts">
-            <tr md-row>
-              <th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
-              <th md-column md-numeric md-order-by="calories.value"><span>Calories</span></th>
-              <th md-column md-numeric>Fat (g)</th>
-              <th md-column md-numeric>Carbs (g)</th>
-              <th md-column md-numeric>Protein (g)</th>
-              <th md-column md-numeric>Sodium (mg)</th>
-              <th md-column md-numeric>Calcium (%)</th>
-              <th md-column md-numeric>Iron (%)</th>
-            </tr>
-          </thead>
-          <tbody md-body>
-            <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="dessert in desserts.data">
-              <td md-cell>{{dessert.name}}</td>
-              <td md-cell>{{dessert.calories.value}}</td>
-              <td md-cell>{{dessert.fat.value | number: 1}}</td>
-              <td md-cell>{{dessert.carbs.value}}</td>
-              <td md-cell>{{dessert.protein.value | number: 1}}</td>
-              <td md-cell>{{dessert.sodium.value}}</td>
-              <td md-cell>{{dessert.calcium.value}}{{dessert.calcium.unit}}</td>
-              <td md-cell>{{dessert.iron.value}}{{dessert.iron.unit}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </md-table-container>
-      
-      <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+<md-toolbar class="md-table-toolbar md-default" >
+  <div class="md-toolbar-tools">
+    <span>Manage Group</span>
+  </div>
+</md-toolbar>
+<!-- <md-toolbar class="md-table-toolbar alternate" ng-show="options.rowSelection && selected.length">
+  <div class="md-toolbar-tools">
+    <span>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</span>
+  </div>
+</md-toolbar> -->
+<!-- exact table from live demo -->
+<md-card style="margin:0px">
+  <md-input-container style="margin:15px;">
+      <label>Filter by search</label>
+      <input type="text" ng-model="filterName">
+  </md-input-container>
+</md-card>
+<md-table-container>
+  <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}"  ng-model="selected">
+    <thead md-head md-order="query.order" md-on-reorder="logOrder">
+      <tr md-row>
+        <th md-column md-order-by="name"><span>Name</span></th>
+        <th md-column md-numeric md-order-by="members"><span>Members</span></th>
+        <th md-column md-numeric md-order-by="status">Status</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="groups" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="group in groups.records | filter: filterName | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+        <td md-cell>{{group.name}}</td>
+        <td md-cell>{{group.members}}</td>
+        <td md-cell>{{group.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{groups.count}}" md-on-paginate="logPagination" md-page-select></md-table-pagination>
