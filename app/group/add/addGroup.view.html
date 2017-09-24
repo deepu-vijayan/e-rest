@@ -1,0 +1,76 @@
+<md-content laout="column" flex>
+    <md-card>
+
+        <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
+            <div class="md-toolbar-tools">
+                <h2 class="md-title">Add Group</h2>
+                <div flex></div>
+                <!-- <md-button class="md-icon-button" ng-click="filter.show = true">
+            <md-tooltip>Save</md-tooltip>
+            <md-icon>filter_list</md-icon>
+          </md-button>
+          <md-button class="md-icon-button" ng-click="addGroup()">
+            <md-tooltip>Add Group</md-tooltip>
+            <md-icon>add</md-icon>
+          </md-button> -->
+            </div>
+        </md-toolbar>
+    </md-card>
+    <md-card>
+        <div class="card-body card-padding">
+            <form name="addGroupForm">
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Name</label>
+                            <input ng-model="group.name" required>
+                            <div ng-messages="addGroupForm.name.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please fill name.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Registration Id</label>
+                            <input ng-model="group.registrationId">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Description</label>
+                            <textarea ng-model="addGroupForm.description" rows="4" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Registration Date</label>
+                            <md-datepicker ng-model="group.registrationDate" md-placeholder="Registration Date"
+                            md-min-date="minDate" ></md-datepicker>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <md-checkbox ng-model="group.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center" flex>
+                                    Status
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <lf-ng-md-file-input lf-files="files" preview></lf-ng-md-file-input>
+                    </div>
+                </div>
+
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button class="md-raised md-primary">Save</md-button>
+                    <md-button ng-disabled="true" class="md-raised md-primary">Reset</md-button>
+                    <md-button class="md-raised">Cancel</md-button>
+                </section>
+            </form>
+        </div>
+    </md-card>
+</md-content>

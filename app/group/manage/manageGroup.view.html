@@ -1,0 +1,55 @@
+<md-content laout="column" flex>
+  <md-card>
+
+    <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
+      <div class="md-toolbar-tools">
+        <h2 class="md-title">Manage Group</h2>
+        <div flex></div>
+        <md-button class="md-icon-button" ng-click="filter.show = true">
+          <md-tooltip>Search / Filter</md-tooltip>
+          <md-icon>filter_list</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" ng-click="addGroup()">
+          <md-tooltip>Add Group</md-tooltip>
+          <md-icon>add</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-toolbar class="md-table-toolbar md-default" ng-show="filter.show">
+      <div class="md-toolbar-tools">
+        <md-icon>search</md-icon>
+        <form flex name="filter.form">
+          <input type="text" ng-model="query.filter" ng-model-options="filter.options" placeholder="search" class="ng-pristine ng-valid ng-touched"
+            aria-invalid="false" >
+        </form>
+        <md-button class="md-icon-button" ng-click="filter.show = false">
+          <md-icon>close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </md-card>
+  <md-card>
+    <md-table-container>
+      <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected">
+        <thead md-head md-order="query.order" md-on-reorder="logOrder">
+          <tr md-row>
+            <th md-column md-order-by="name"><span>Name</span></th>
+            <th md-column md-numeric md-order-by="members"><span>Members</span></th>
+            <th md-column md-numeric md-order-by="status">Status</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="groups" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="group in groups.records | filter: query.filter | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+            <td md-cell>{{group.name}}</td>
+            <td md-cell>{{group.members}}</td>
+            <td md-cell>{{group.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{groups.count}}"
+      md-on-paginate="logPagination" md-page-select></md-table-pagination>
+  </md-card>
+</md-content>

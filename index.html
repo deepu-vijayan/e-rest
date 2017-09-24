@@ -3,13 +3,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <!-- Angular Material style sheet -->
       <link href="bower_components/angular-material/angular-material.min.css"rel="stylesheet" type="text/css"/>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css"/> 
+      <link href="css/materialicon.css" rel="stylesheet" type="text/css"/> 
       <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.css">
       <!-- <link href="bower_components/animate.css/animate.min.css"rel="stylesheet" type="text/css"/> -->
       <link href="css/custom.css" rel="stylesheet" type="text/css"/>
   </head>
 
-  <body ng-app="erestaurant" ng-cloak>
+  <body ng-app="erestaurant" ng-cloak layout="column">
     <!-- <a ui-sref="hello" ui-sref-active="active">Hello</a>
     <a ui-sref="about" ui-sref-active="active">About</a> -->
     <ui-view id="view" class="slide-in"></ui-view>
@@ -21,12 +22,15 @@
     <script src="bower_components/angular-material/angular-material.js"></script> 
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script> 
     <script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+    <script src="bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.js"></script>
 
     <script src="js/config/app.js"></script>
     <script src="js/config/app.route.js"></script>
 
     <script src="app/login/login.controller.js"></script>
-    <script src="app/group/manageGroup.controller.js"></script>
+    <script src="app/layout/main.controller.js"></script>
+    <script src="app/group/manage/manageGroup.controller.js"></script>
+    <script src="app/group/add/addGroup.controller.js"></script>
 
     <script src="js/services/baseUrl.service.js"></script>
     <script src="js/services/api.service.js"></script>

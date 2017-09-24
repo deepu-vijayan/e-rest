@@ -1,4 +1,4 @@
-erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", function($scope, apiService, $state){
+erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", function($scope, apiService, $state, $mdSidenav, $timeout, $log){
     
     $scope.selected = [];
     $scope.query = {
@@ -17,6 +17,7 @@ erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", f
         pageSelect: true
     };
     $scope.limitOptions = [5, 10, 15];
+    
 
     function init(){
         
@@ -33,6 +34,9 @@ erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", f
     $scope.logPagination = function (page, limit) {
         console.log('page: ', page);
         console.log('limit: ', limit);
+    }
+    $scope.addGroup = function(){
+        $state.go('layout.addGroup')
     }
     init();
 }])
