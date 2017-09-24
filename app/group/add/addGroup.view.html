@@ -5,14 +5,7 @@
             <div class="md-toolbar-tools">
                 <h2 class="md-title">Add Group</h2>
                 <div flex></div>
-                <!-- <md-button class="md-icon-button" ng-click="filter.show = true">
-            <md-tooltip>Save</md-tooltip>
-            <md-icon>filter_list</md-icon>
-          </md-button>
-          <md-button class="md-icon-button" ng-click="addGroup()">
-            <md-tooltip>Add Group</md-tooltip>
-            <md-icon>add</md-icon>
-          </md-button> -->
+
             </div>
         </md-toolbar>
     </md-card>
@@ -46,9 +39,9 @@
                 </div>
                 <div layout="row">
                     <div flex>
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Registration Date</label>
-                            <md-datepicker ng-model="group.registrationDate" md-placeholder="Registration Date"
+                        <md-input-container class="md-block" layout-align="start start" flex-gt-sm>
+                                <label>Registration Date</label>
+                            <md-datepicker ng-model="group.registrationDate"  
                             md-min-date="minDate" ></md-datepicker>
                         </md-input-container>
                     </div>

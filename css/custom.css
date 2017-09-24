@@ -123,4 +123,23 @@ input::-webkit-input-placeholder {
 .card-body.card-padding {
     padding: 23px 25px;
 }
+.block-header {
+  padding: 0 18px;
+}
+}
+md-input-container .md-datepicker-input{
+  min-width: 187px;
+}
+.block-header > h2 {
+  font-size: 15px;
+  color: #777;
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.side-nav-left md-list-item{
+  cursor: pointer;
+}
+.side-nav-left md-list-item:hover{
+  background-color:#E9E9E9
 }

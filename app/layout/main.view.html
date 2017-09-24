@@ -24,7 +24,7 @@
         </md-menu>
     </div>
 </md-toolbar>
-<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+<md-sidenav class="md-sidenav-left md-whiteframe-4dp side-nav-left" md-component-id="left">
 
     <md-toolbar layout="row">
         <div class="md-toolbar-tools">
@@ -41,19 +41,17 @@
     <md-content layout-padding="">
         <md-list>
             <md-subheader class="md-no-sticky">Manage</md-subheader>
-            <md-list-item>
+            <md-list-item ng-click="redirectToScreen('layout.manageGroup')">
                 <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">group</i></md-icon>
                 <p>Group</p>
             </md-list-item>
             <md-list-item>
-                <md-icon class="md-default-theme" class="material-icons">&#xE878;</md-icon>
-                <p>Events</p>
-                <md-icon class="md-secondary">2</md-icon>
+                <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">restaurant</i></md-icon>
+                <p>Restaurant</p>
             </md-list-item>
             <md-list-item>
-                <md-icon class="md-default-theme" class="material-icons">&#xE251;</md-icon>
-                <p>Photos</p>
-                <md-icon class="md-secondary">2</md-icon>
+                <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">account_balance</i></md-icon>
+                <p>Tax</p>
             </md-list-item>
             <md-divider></md-divider>
             <md-subheader class="md-no-sticky">Pages</md-subheader>

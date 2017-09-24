@@ -23,4 +23,8 @@ erestaurant.controller("MainControl",["$scope", "apiService", "$state", "$mdSide
           }, wait || 10);
         };
     }
+    $scope.redirectToScreen = function (state){
+        $state.go(state);
+        $scope.toggleLeft();
+    }
 }]);    
