@@ -4,5 +4,9 @@ erestaurant.controller("AddGroupControl",["$scope", "apiService", "$state", "$md
         this.myDate.getFullYear(),
         this.myDate.getMonth(),
         this.myDate.getDate()
-      );
+    );
+    $scope.cancel = function (){
+        $state.go('layout.manageGroup',{"effect":"slide-right"})
+    }
+
 }])    

@@ -18,12 +18,11 @@
 	flex: none;
 	background-color: transparent;
 }
-
 #view.slide-in.ng-enter,
 #view.slide-in.ng-leave      { position:absolute; left:30px; right:30px;
     transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
 }
-    
+  
 #view.slide-in.ng-enter            { 
     -webkit-animation:slideInRight 0.5s both ease;
 	-moz-animation:slideInRight 0.5s both ease;
@@ -34,6 +33,37 @@
     -webkit-animation:slideOutLeft 0.5s both ease;
 	-moz-animation:slideOutLeft 0.5s both ease;
 	animation:slideOutLeft 0.5s both ease;   
+}
+
+.slide-left.ng-enter,
+.slide-left.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}  
+.slide-left.ng-enter            { 
+  -webkit-animation:slideInRight 0.5s both ease;
+-moz-animation:slideInRight 0.5s both ease;
+animation:slideInRight 0.5s both ease; 
+}
+.slide-left.ng-leave            { 
+  -webkit-animation:slideOutLeft 0.5s both ease;
+-moz-animation:slideOutLeft 0.5s both ease;
+animation:slideOutLeft 0.5s both ease;   
+}
+
+
+.slide-right.ng-enter,
+.slide-right.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}  
+.slide-right.ng-enter            { 
+  -webkit-animation:slideInLeft 0.5s both ease;
+-moz-animation:slideInLeft 0.5s both ease;
+animation:slideInLeft 0.5s both ease; 
+}
+.slide-right.ng-leave            { 
+  -webkit-animation:slideOutRight 0.5s both ease;
+-moz-animation:slideOutRight 0.5s both ease;
+animation:slideOutRight 0.5s both ease;   
 }
 
 @keyframes slideOutLeft {
@@ -57,6 +87,27 @@
 @-webkit-keyframes slideInRight {
 	from 	{ -webkit-transform:translateX(200%); }
 	to 		{ -webkit-transform: translateX(0); }
+}
+@keyframes slideInLeft {
+	from 	{ transform:translateX(-200%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInLeft {
+	from 	{ -moz-transform:translateX(-200%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInLeft {
+	from 	{ -webkit-transform:translateX(-200%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+@keyframes slideOutRight {
+	to 		{ transform: translateX(200%); }
+}
+@-moz-keyframes slideOutRight {	
+	to 		{ -moz-transform: translateX(200%); }
+}
+@-webkit-keyframes slideOutRight {
+	to 		{ -webkit-transform: translateX(200%); }
 }
 md-toolbar.md-table-toolbar form > input {
     width: 100%;
@@ -142,4 +193,9 @@ md-input-container .md-datepicker-input{
 }
 .side-nav-left md-list-item:hover{
   background-color:#E9E9E9
+}
+button i{
+  position: relative;
+  top: 6px;
+  padding: 0 2px 0 0;
 }

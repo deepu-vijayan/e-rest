@@ -1,4 +1,4 @@
-erestaurant.config(function($stateProvider, $urlRouterProvider) {
+erestaurant.config(["$stateProvider", "$urlRouterProvider", "$httpProvider", function($stateProvider, $urlRouterProvider, $httpProvider) {
   
   
       $stateProvider
@@ -19,6 +19,9 @@ erestaurant.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "app/group/manage/manageGroup.view.html",
                     controller: 'ManageGroupControl'
                 }
+            },
+            params: {
+                'effect': 'slide-left'
             }
         })
         .state("layout.addGroup", {
@@ -28,7 +31,58 @@ erestaurant.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "app/group/add/addGroup.view.html",
                     controller: 'AddGroupControl'
                 }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
+        .state("layout.manageTax", {
+            url: "/manage-tax",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/tax/manage/manageTax.view.html",
+                    controller: 'ManageTaxControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
+        .state("layout.addTax", {
+            url: "/add-tax",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/tax/add/addTax.view.html",
+                    controller: 'AddTaxControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
+        .state("layout.addRestaurant", {
+            url: "/add-restaurant",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/restaurant/add/addRestaurant.view.html",
+                    controller: 'AddRestaurantControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
+        .state("layout.manageRestaurant", {
+            url: "/manage-restaurant",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/restaurant/manage/manageRestaurant.view.html",
+                    controller: 'ManageRestaurantControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
             }
         });
       $urlRouterProvider.when("", "/login");
-});    
+}]);    

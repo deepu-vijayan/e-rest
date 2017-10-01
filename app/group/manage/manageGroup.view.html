@@ -37,6 +37,7 @@
             <th md-column md-order-by="name"><span>Name</span></th>
             <th md-column md-numeric md-order-by="members"><span>Members</span></th>
             <th md-column md-numeric md-order-by="status">Status</th>
+            <th md-column md-numeric >Action</th>
           </tr>
         </thead>
         <tbody md-body>
@@ -44,6 +45,7 @@
             <td md-cell>{{group.name}}</td>
             <td md-cell>{{group.members}}</td>
             <td md-cell>{{group.status}}</td>
+            <td md-cell><md-icon>mode_edit</md-icon>&nbsp;<md-icon>delete_forever</md-icon></td>
           </tr>
         </tbody>
       </table>

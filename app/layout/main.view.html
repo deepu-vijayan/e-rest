@@ -17,7 +17,7 @@
                         <md-icon> <i class="material-icons">subject</i></md-icon> About</md-button>
                 </md-menu-item>
                 <md-menu-item>
-                    <md-button>
+                    <md-button ng-click="logout()">
                         <md-icon> <i class="material-icons">power_settings_new</i> </md-icon> Logout</md-button>
                 </md-menu-item>
             </md-menu-content>
@@ -45,30 +45,28 @@
                 <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">group</i></md-icon>
                 <p>Group</p>
             </md-list-item>
-            <md-list-item>
+            <md-list-item ng-click="redirectToScreen('layout.manageRestaurant')">
                 <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">restaurant</i></md-icon>
                 <p>Restaurant</p>
             </md-list-item>
-            <md-list-item>
+            <md-list-item ng-click="redirectToScreen('layout.manageTax')">
                 <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">account_balance</i></md-icon>
                 <p>Tax</p>
             </md-list-item>
             <md-divider></md-divider>
-            <md-subheader class="md-no-sticky">Pages</md-subheader>
+            <md-subheader class="md-no-sticky">My Account</md-subheader>
             <md-list-item>
-                <md-icon class="md-default-theme" class="material-icons">&#xE7F9;</md-icon>
-                <p>Pages Feed</p>
-                <div class="md-secondary">2</div>
+                <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">portrait</i></md-icon>
+                <p>Manage Profile</p>
             </md-list-item>
             <md-list-item>
-                <md-icon class="md-default-theme" class="material-icons">&#xE1BC;</md-icon>
-                <p>Like Pages</p>
-                <div class="md-secondary">20+</div>
+                <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">enhanced_encryption</i></md-icon>
+                <p>Change Password</p>
             </md-list-item>
         </md-list>
     </md-content>
 </md-sidenav>
-<div ui-view name="main-layout"></div>
+<div ui-view name="main-layout" class="{{slideClass}}"></div>
 <footer id="footer" class="ng-scope"><span class="ng-scope">Copyright © 2015 Material Admin</span>
     <ul class="f-menu ng-scope">
         <li><a href="">Home</a></li>

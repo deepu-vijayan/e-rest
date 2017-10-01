@@ -3,7 +3,7 @@
 
         <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
             <div class="md-toolbar-tools">
-                <h2 class="md-title">Add Group</h2>
+                <h2 class="md-title">Add Tax</h2>
                 <div flex></div>
 
             </div>
@@ -11,21 +11,21 @@
     </md-card>
     <md-card>
         <div class="card-body card-padding">
-            <form name="addGroupForm">
+            <form name="addTaxForm">
                 <div layout="row">
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Name</label>
-                            <input ng-model="group.name" required>
-                            <div ng-messages="addGroupForm.name.$error" role="alert" multiple="">
+                            <input ng-model="tax.name" required>
+                            <div ng-messages="addTaxForm.name.$error" role="alert" multiple="">
                                 <div ng-message="required" class="my-message">Please fill name.</div>
                             </div>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
-                            <label>Registration Id</label>
-                            <input ng-model="group.registrationId">
+                            <label>Tax (%)</label>
+                            <input ng-model="tax.tax">
                         </md-input-container>
                     </div>
                 </div>
@@ -33,34 +33,23 @@
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Description</label>
-                            <textarea ng-model="group.description" rows="4" md-select-on-focus></textarea>
+                            <textarea ng-model="tax.description" rows="4" md-select-on-focus></textarea>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row">
-                    <div flex>
-                        <md-input-container class="md-block" layout-align="start start" flex-gt-sm>
-                            <label>Registration Date</label>
-                            <md-datepicker ng-model="group.registrationDate" md-min-date="minDate" md-open-on-focus	></md-datepicker>
-                        </md-input-container>
-                    </div>
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
-                            <md-checkbox ng-model="group.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center" flex>
+                            <md-checkbox ng-model="tax.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center" flex>
                                     Status
                         </md-input-container>
-                    </div>
-                </div>
-                <div layout="row">
-                    <div flex>
-                        <lf-ng-md-file-input lf-files="files" preview></lf-ng-md-file-input>
                     </div>
                 </div>
 
                 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
                     <md-button class="md-raised md-primary"><i class="material-icons">done</i>Save</md-button>
                     <md-button ng-disabled="true" class="md-raised md-primary"><i class="material-icons">clear</i>Reset</md-button>
-                    <md-button class="md-raised" ng-click="cancel()"><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
+                    <md-button class="md-raised" ><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
                 </section>
             </form>
         </div>
