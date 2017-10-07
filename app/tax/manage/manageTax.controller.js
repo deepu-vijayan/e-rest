@@ -1,4 +1,4 @@
-erestaurant.controller("ManageTaxControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", function($scope, apiService, $state, $mdSidenav, $timeout, $log){
+erestaurant.controller("ManageTaxControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", "businessService", function($scope, apiService, $state, $mdSidenav, $timeout, $log, businessService){
     $scope.selected = [];
     $scope.query = {
         order: 'name',
@@ -26,6 +26,10 @@ erestaurant.controller("ManageTaxControl",["$scope", "apiService", "$state", "$m
     }
     $scope.addTax = function(){
         $state.go('layout.addTax');
+    }
+    $scope.editTax = function (tax){
+        businessService.setTax(tax);
+        $state.go('layout.editTax')
     }
     function init(){
         

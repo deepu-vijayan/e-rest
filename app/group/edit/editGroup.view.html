@@ -3,7 +3,7 @@
 
         <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
             <div class="md-toolbar-tools">
-                <h2 class="md-title">Add Restaurant</h2>
+                <h2 class="md-title">Add Group</h2>
                 <div flex></div>
 
             </div>
@@ -11,43 +11,43 @@
     </md-card>
     <md-card>
         <div class="card-body card-padding">
-            <form name="addRestaurantForm">
+            <form name="addGroupForm">
                 <div layout="row">
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Name</label>
-                            <input ng-model="restaurant.name" required>
-                            <div ng-messages="addRestaurantForm.name.$error" role="alert" multiple="">
+                            <input ng-model="group.name" required>
+                            <div ng-messages="addGroupForm.name.$error" role="alert" multiple="">
                                 <div ng-message="required" class="my-message">Please fill name.</div>
                             </div>
                         </md-input-container>
                     </div>
                     <div flex>
-                        <md-select placeholder="Select group" ng-model="group" md-on-open="loadGroups()">
-                            <md-option ng-value="group" ng-repeat="group in groups">{{group.name}}</md-option>
-                        </md-select>
-                    </div>
-                </div>
-                <div layout="row">
-                    <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
-                            <label>Address</label>
-                            <textarea ng-model="restaurant.address" rows="4" md-select-on-focus></textarea>
+                            <label>Registration Id</label>
+                            <input ng-model="group.registrationId">
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row">
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
-                            <label>Pin</label>
-                            <input ng-model="restaurant.pin">
+                            <label>Description</label>
+                            <textarea ng-model="group.description" rows="4" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" layout-align="start start" flex-gt-sm>
+                            <label>Registration Date</label>
+                            <md-datepicker ng-model="group.registrationDate" md-min-date="minDate" md-open-on-focus	></md-datepicker>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
-                            <md-checkbox ng-model="restaurant.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center"
-                                flex>
-                                Status
+                            <md-checkbox ng-model="group.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center" flex>
+                                    Status
                         </md-input-container>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
                     <md-button class="md-raised md-primary"><i class="material-icons">done</i>Save</md-button>
                     <md-button ng-disabled="true" class="md-raised md-primary"><i class="material-icons">clear</i>Reset</md-button>
-                    <md-button class="md-raised"><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
+                    <md-button class="md-raised" ng-click="cancel()"><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
                 </section>
             </form>
         </div>

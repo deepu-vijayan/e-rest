@@ -199,3 +199,6 @@ button i{
   top: 6px;
   padding: 0 2px 0 0;
 }
+.hyperlink{
+  cursor: pointer;
+}

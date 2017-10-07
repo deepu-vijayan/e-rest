@@ -36,6 +36,18 @@ erestaurant.config(["$stateProvider", "$urlRouterProvider", "$httpProvider", fun
                 'effect': 'slide-left'
             }
         })
+        .state("layout.editGroup", {
+            url: "/edit-group",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/group/edit/editGroup.view.html",
+                    controller: 'EditGroupControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
         .state("layout.manageTax", {
             url: "/manage-tax",
             views: {
@@ -60,12 +72,36 @@ erestaurant.config(["$stateProvider", "$urlRouterProvider", "$httpProvider", fun
                 'effect': 'slide-left'
             }
         })
+        .state("layout.editTax", {
+            url: "/edit-tax",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/tax/edit/editTax.view.html",
+                    controller: 'EditTaxControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
         .state("layout.addRestaurant", {
             url: "/add-restaurant",
             views: {
                 'main-layout': {
                     templateUrl: "app/restaurant/add/addRestaurant.view.html",
                     controller: 'AddRestaurantControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
+        })
+        .state("layout.editRestaurant", {
+            url: "/edit-restaurant",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/restaurant/edit/editRestaurant.view.html",
+                    controller: 'EditRestaurantControl'
                 }
             },
             params: {

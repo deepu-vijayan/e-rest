@@ -1,4 +1,4 @@
-erestaurant.controller("ManageRestaurantControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", function($scope, apiService, $state, $mdSidenav, $timeout, $log){
+erestaurant.controller("ManageRestaurantControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", "businessService", function($scope, apiService, $state, $mdSidenav, $timeout, $log, businessService){
     $scope.selected = [];
     $scope.query = {
         order: 'name',
@@ -26,6 +26,10 @@ erestaurant.controller("ManageRestaurantControl",["$scope", "apiService", "$stat
     }
     $scope.addRestaurant = function(){
         $state.go('layout.addRestaurant');
+    }
+    $scope.editRestaurant = function(restaurant){
+        businessService.setRestaurant(restaurant);
+        $state.go('layout.editRestaurant')
     }
     function init(){
         

@@ -44,8 +44,8 @@
             <tr md-row md-select="restaurantes" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="restaurant in restaurantes.records | filter: query.filter | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
               <td md-cell>{{restaurant.name}}</td>
               <td md-cell>{{restaurant.group}}</td>
-              <td md-cell>{{restaurant.status}}</td>
-              <td md-cell><md-icon>mode_edit</md-icon>&nbsp;<md-icon>delete_forever</md-icon></td>
+              <td md-cell><label ng-if="restaurant.status==1">Active</label><label ng-if="restaurant.status==0">Inactive</label></td>
+              <td md-cell><md-icon class="hyperlink" ng-click="editRestaurant(restaurant)">mode_edit</md-icon>&nbsp;<md-icon class="hyperlink">delete_forever</md-icon></td>
             </tr>
           </tbody>
         </table>

@@ -44,8 +44,8 @@
             <tr md-row md-select="taxes" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="tax in taxes.records | filter: query.filter | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
               <td md-cell>{{tax.name}}</td>
               <td md-cell>{{tax.tax}}</td>
-              <td md-cell>{{tax.status}}</td>
-              <td md-cell><md-icon>mode_edit</md-icon>&nbsp;<md-icon>delete_forever</md-icon></td>
+              <td md-cell><label ng-if="tax.status==1">Active</label><label ng-if="tax.status==0">Inactive</label></td>
+              <td md-cell><md-icon class="hyperlink" ng-click="editTax(tax)">mode_edit</md-icon>&nbsp;<md-icon class="hyperlink">delete_forever</md-icon></td>
             </tr>
           </tbody>
         </table>

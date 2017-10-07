@@ -1,4 +1,4 @@
-erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", function($scope, apiService, $state, $mdSidenav, $timeout, $log){
+erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", "businessService", function($scope, apiService, $state, $mdSidenav, $timeout, $log, businessService){
     
     $scope.selected = [];
     $scope.query = {
@@ -37,6 +37,10 @@ erestaurant.controller("ManageGroupControl",["$scope", "apiService", "$state", "
     }
     $scope.addGroup = function(){
         $state.go('layout.addGroup')
+    }
+    $scope.editGroup = function (group){
+        businessService.setGroup(group);
+        $state.go('layout.editGroup')
     }
     init();
 }])
