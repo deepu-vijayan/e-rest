@@ -3,7 +3,7 @@
 
         <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
             <div class="md-toolbar-tools">
-                <h2 class="md-title">Add Group</h2>
+                <h2 class="md-title">Edit Group</h2>
                 <div flex></div>
 
             </div>
@@ -38,18 +38,28 @@
                     </div>
                 </div>
                 <div layout="row">
-                    <div flex>
-                        <md-input-container class="md-block" layout-align="start start" flex-gt-sm>
+                    <div flex >
+                        <md-input-container class="md-block" layout-align="start center" layout="row" flex-gt-sm>
                             <label>Registration Date</label>
                             <md-datepicker ng-model="group.registrationDate" md-min-date="minDate" md-open-on-focus	></md-datepicker>
                         </md-input-container>
                     </div>
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
-                            <md-checkbox ng-model="group.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center" flex>
+                            <md-checkbox ng-model="group.status" aria-label="Status" ng-checked="group.status" class="md-primary md-align-center-center" flex>
                                     Status
                         </md-input-container>
                     </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <div class="label" >Number of Restaurants
+                            <md-button class="md-fab md-primary" ng-click="showAdvanced($event)">
+                                {{group.noRestaurants}}
+                            </md-button></div>
+                        </md-input-container>
+                    </div> 
                 </div>
                 <div layout="row">
                     <div flex>

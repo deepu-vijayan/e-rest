@@ -21,4 +21,7 @@ erestaurant.controller("EditRestaurantControl", ["$scope", "apiService", "$state
             ];
 
     }
+    $scope.cancel = function (){
+        $state.go('layout.manageRestaurant',{"effect":"slide-right"});
+    }
 }])    

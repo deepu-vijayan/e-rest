@@ -9,4 +9,7 @@ erestaurant.controller("EditTaxControl",["$scope", "apiService", "$state", "$mdS
         this.myDate.getMonth(),
         this.myDate.getDate()
     );
+    $scope.cancel = function (){
+        $state.go('layout.manageTax',{"effect":"slide-right"});
+    }
 }])    

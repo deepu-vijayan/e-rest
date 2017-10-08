@@ -34,21 +34,9 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
         var data ={
             "count": 15,
             "records":[
-            {"id":1, "name":"Alfreds Futterkiste","members":"Berlin","status":1},
-            {"id":2, "name":"Ana Trujillo Emparedados y helados","members":"México D.F.","status":1},
-            {"id":3, "name":"Antonio Moreno Taquería","members":"México D.F.","status":0},
-            {"id":4, "name":"Around the Horn","members":"London","status":0},
-            {"id":5, "name":"B's Beverages","members":"London","status":1},
-            {"id":6, "name":"Berglunds snabbköp","members":"Luleå","status":0},
-            {"id":7, "name":"Blauer See Delikatessen","members":"Mannheim","status":0},
-            {"id":8, "name":"Blondel père et fils","members":"Strasbourg","status":1},
-            {"id":9, "name":"Bólido Comidas preparadas","members":"Madrid","status":1},
-            {"id":10, "name":"Bon app'","members":"Marseille","status":1},
-            {"id":11, "name":"Bottom-Dollar Marketse","members":"Tsawassen","status":0},
-            {"id":12, "name":"Cactus Comidas para llevar","members":"Buenos Aires","status":0},
-            {"id":13, "name":"Centro comercial Moctezuma","members":"México D.F.","status":1},
-            {"id":14, "name":"Chop-suey Chinese","members":"Bern","status":1},
-            {"id":15, "name":"Comércio Mineiro","members":"São Paulo","status":1}
+            {"id":1, "name":"Group 1","registrationId":"XER1234","status":"true","description":"test description","registrationDate":"10-10-2017","noRestaurants":7},
+            {"id":2, "name":"Group 2","registrationId":"XER1234","status":"false","description":"test description","registrationDate":"10-10-2017","noRestaurants":4},
+            {"id":3, "name":"Group 3","registrationId":"XER1234","status":"true","description":"test description","registrationDate":"10-10-2017","noRestaurants":2},
             ]
         } 
         def.resolve(data);
@@ -100,21 +88,8 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
         var data ={
             "count": 15,
             "records":[
-            {"id":1, "name":"AC 3 *","group":"A","status":1},
-            {"id":2, "name":"Ana Trujillo Emparedados y helados","group":"B","status":1},
-            {"id":3, "name":"Antonio Moreno Taquería","group":"B","status":0},
-            {"id":4, "name":"Around the Horn","group":"C","status":0},
-            {"id":5, "name":"B's Beverages","group":"B","status":1},
-            {"id":6, "name":"Berglunds snabbköp","group":"D","status":0},
-            {"id":7, "name":"Blauer See Delikatessen","group":"B","status":0},
-            {"id":8, "name":"Blondel père et fils","group":"B","status":1},
-            {"id":9, "name":"Bólido Comidas preparadas","group":"D","status":1},
-            {"id":10, "name":"Bon app'","group":"E","status":1},
-            {"id":11, "name":"Bottom-Dollar Marketse","group":"B","status":0},
-            {"id":12, "name":"Cactus Comidas para llevar","group":"E","status":0},
-            {"id":13, "name":"Centro comercial Moctezuma","group":"F","status":1},
-            {"id":14, "name":"Chop-suey Chinese","group":"B","status":1},
-            {"id":15, "name":"Comércio Mineiro","group":"B","status":1}
+            {"id":1, "name":"Royal","group":"A","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            
             ]
         } 
         def.resolve(data);

@@ -43,7 +43,7 @@
         <tbody md-body>
           <tr md-row md-select="groups" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="group in groups.records | filter: query.filter | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
             <td md-cell>{{group.name}}</td>
-            <td md-cell>{{group.members}}</td>
+            <td md-cell>{{group.noRestaurants}}</td>
             <td md-cell><label ng-if="group.status==1">Active</label><label ng-if="group.status==0">Inactive</label></td>
             <td md-cell><md-icon class="hyperlink" ng-click="editGroup(group)">mode_edit</md-icon>&nbsp;<md-icon class="hyperlink">delete_forever</md-icon></td>
           </tr>

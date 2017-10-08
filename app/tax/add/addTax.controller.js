@@ -5,4 +5,7 @@ erestaurant.controller("AddTaxControl",["$scope", "apiService", "$state", "$mdSi
         this.myDate.getMonth(),
         this.myDate.getDate()
     );
+    $scope.cancel = function (){
+        $state.go('layout.manageTax',{"effect":"slide-right"});
+    }
 }])    

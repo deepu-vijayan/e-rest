@@ -8,8 +8,7 @@ erestaurant.controller("AddRestaurantControl", ["$scope", "apiService", "$state"
     $scope.loadGroups = function () {
 
         // Use timeout to simulate a 650ms request.
-        return $timeout(function () {
-
+        return 
             $scope.groups = $scope.groups || [
                 { id: 1, name: 'A' },
                 { id: 2, name: 'B' },
@@ -17,7 +16,8 @@ erestaurant.controller("AddRestaurantControl", ["$scope", "apiService", "$state"
                 { id: 4, name: 'D' },
                 { id: 5, name: 'E' }
             ];
-
-        }, 650);
+    }
+    $scope.cancel = function (){
+        $state.go('layout.manageRestaurant',{"effect":"slide-right"});
     }
 }])    
