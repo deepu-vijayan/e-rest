@@ -39,6 +39,26 @@
                 </div>
                 <div layout="row">
                     <div flex>
+                        <md-input-container class="width-99">
+                            <label>Restaurantes</label>
+                            <md-select ng-model="tax.selectedRestaurantes"
+                                        md-on-close="clearSearchTerm()"
+                                        data-md-container-class="selectdemoSelectHeader"
+                                        multiple>
+                                <md-select-header class="demo-select-header">
+                                <input ng-model="searchRestaurantTerm"
+                                        type="search"
+                                        placeholder="Search for a Restaurant.."
+                                        class="demo-header-searchbox md-text">
+                                </md-select-header>
+                                <md-optgroup label="restaurant">
+                                <md-option ng-value="restaurant" ng-repeat="restaurant in restaurantes |
+                                    filter:searchRestaurantTerm">{{restaurant}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
                             <md-checkbox ng-model="tax.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center" flex>
                                     Status
