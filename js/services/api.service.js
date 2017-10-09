@@ -88,8 +88,45 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
         var data ={
             "count": 15,
             "records":[
-            {"id":1, "name":"Royal","group":"A","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
-            
+            {"id":1, "name":"Royal","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":2, "name":"Silicon ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":3, "name":"Seeshore ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":4, "name":"New India ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":5, "name":"Aryas ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":6, "name":"Dhanya ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":7, "name":"New India ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":8, "name":"Royal","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":9, "name":"Silicon ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":10, "name":"Seeshore ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":11, "name":"New India ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":12, "name":"Aryas ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":13, "name":"Dhanya ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":14, "name":"New India ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            ]
+        } 
+        def.resolve(data);
+        return def.promise;
+    }
+    function getRestaurantByGroup(){
+        var def = $q.defer();
+        var baseUrl = baseUrlService.getBaseUrl(true);
+        var url = baseUrl + "/manageRestaurant";
+
+        // $http.post(url, data).then(function (data) {
+        //     def.resolve(data.data);
+        // }, function (error) {
+        //     def.reject("Network/Connection Error");
+        // });
+        var data ={
+            "count": 15,
+            "records":[
+            {"id":1, "name":"Royal","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":2, "name":"Silicon ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":3, "name":"Seeshore ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":4, "name":"New India ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":5, "name":"Aryas ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":6, "name":"Dhanya ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":7, "name":"New India ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"}
             ]
         } 
         def.resolve(data);
