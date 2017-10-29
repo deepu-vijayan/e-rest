@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div layout="row">
-                    
+
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
                             <label>Pin</label>
@@ -72,6 +72,10 @@
                     </div>
                 </div>
                 <div layout="row">
+                    <div flex>
+                            <md-button class="md-raised md-primary" ng-click="addTableGroup()"><i class="material-icons">add</i>Add Table Group</md-button>
+                            <md-button class="md-raised md-primary" ng-click="viewTableGroup($event)"><i class="material-icons">view_list</i>View Table Groups</md-button>
+                    </div>
                     <div flex>
                         <md-input-container class="md-block" flex-gt-sm>
                             <md-checkbox ng-model="restaurant.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center"

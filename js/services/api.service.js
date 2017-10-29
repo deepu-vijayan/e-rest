@@ -4,6 +4,7 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
     service.manageGroup = manageGroup;
     service.manageTax = manageTax;
     service.manageRestaurant = manageRestaurant;
+    service.viewTableGroup = viewTableGroup;
     return service;
 
     function login(data){
@@ -102,6 +103,26 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
             {"id":12, "name":"Aryas ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
             {"id":13, "name":"Dhanya ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
             {"id":14, "name":"New India ","group":"Group2","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            ]
+        } 
+        def.resolve(data);
+        return def.promise;
+    }
+    function viewTableGroup(){
+        var def = $q.defer();
+        var baseUrl = baseUrlService.getBaseUrl(true);
+        var url = baseUrl + "/viewTableGroup";
+
+        // $http.post(url, data).then(function (data) {
+        //     def.resolve(data.data);
+        // }, function (error) {
+        //     def.reject("Network/Connection Error");
+        // });
+        var data ={
+            "count": 15,
+            "records":[
+            {"id":1, "name":"Table group AC","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":2, "name":"Table group Non AC ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
             ]
         } 
         def.resolve(data);

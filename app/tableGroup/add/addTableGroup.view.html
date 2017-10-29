@@ -1,0 +1,72 @@
+<md-content laout="column" flex>
+    <md-card>
+
+        <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
+            <div class="md-toolbar-tools">
+                <h2 class="md-title">Add Table Group</h2>
+                <div flex></div>
+
+            </div>
+        </md-toolbar>
+    </md-card>
+    <md-card>
+        <div class="card-body card-padding">
+            <form name="addGroupForm">
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Name</label>
+                            <input ng-model="restaurantGroup.name" required>
+                            <div ng-messages="addGroupForm.name.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please fill name.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Restaurant Name</label>
+                            <input ng-model="restaurantGroup.restaurantName" disabled required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Description</label>
+                            <textarea ng-model="restaurantGroup.description" rows="4" md-select-on-focus></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="width-99">
+                            <label>Tax Group</label>
+                            <md-select ng-model="restaurantGroup.selectedTaxGroups" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader"
+                                multiple>
+                                <md-select-header class="demo-select-header">
+                                    <input ng-model="searchTaxGroupTerm" type="search" placeholder="Search for a Tax group.." class="demo-header-searchbox md-text">
+                                </md-select-header>
+                                <md-optgroup label="taxgroup">
+                                    <md-option ng-value="taxgroup" ng-repeat="taxgroup in taxgroups |
+                                            filter:searchTaxGroupTerm">{{taxgroup}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <md-checkbox ng-model="restaurantGroup.status" aria-label="Status" ng-true-value="'true'" ng-false-value="'false'" class="md-primary md-align-center-center"
+                                flex>
+                                Status
+                        </md-input-container>
+                    </div>
+                </div>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button class="md-raised md-primary"><i class="material-icons">done</i>Save</md-button>
+                    <md-button ng-disabled="true" class="md-raised md-primary"><i class="material-icons">clear</i>Reset</md-button>
+                    <md-button class="md-raised" ng-click="cancel()"><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
+                </section>
+            </form>
+        </div>
+    </md-card>
+</md-content>
