@@ -8,6 +8,8 @@ erestaurant.factory("businessService",["$http", function ($http){
     service.getTax = getTax;
     service.getRestaurant = getRestaurant;
     service.setRestaurant = setRestaurant;
+    service.setTableGroup  = setTableGroup;
+    service.getTableGroup = getTableGroup;
     var storeValue = function (key, value) {
         sessionStorage.setItem(key, value);
     }
@@ -32,6 +34,12 @@ erestaurant.factory("businessService",["$http", function ($http){
     }
     function getRestaurant(){
         return JSON.parse(getValue("editRestaurant"));
+    }
+    function setTableGroup(tableGroup){
+        storeValue("editTableGroup", JSON.stringify(tableGroup));
+    }
+    function getTableGroup(){
+        return JSON.parse(getValue("editTableGroup"));
     }
     return service;
 }]);

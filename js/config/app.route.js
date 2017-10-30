@@ -130,6 +130,17 @@ erestaurant.config(["$stateProvider", "$urlRouterProvider", "$httpProvider", fun
             params: {
                 'effect': 'slide-left'
             }
+        }).state("layout.manageTableGroup", {
+            url: "/manage-table-group",
+            views: {
+                'main-layout': {
+                    templateUrl: "app/tableGroup/manage/manageTableGroup.view.html",
+                    controller: 'ManageTableGroupControl'
+                }
+            },
+            params: {
+                'effect': 'slide-left'
+            }
         });
       $urlRouterProvider.when("", "/login");
 }]);    

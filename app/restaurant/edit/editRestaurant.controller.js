@@ -27,70 +27,8 @@ erestaurant.controller("EditRestaurantControl", ["$scope", "apiService", "$state
     $scope.addTableGroup = function (){
         $state.go('layout.addTableGroup');
     }
-    $scope.viewTableGroup = function(ev){
-        $mdDialog.show({
-            controller: ViewTableGroupControl,
-            templateUrl: 'app/tableGroup/view/viewTableGroup.view.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        })
-            .then(function (answer) {
-                $scope.status = 'You said the information was "' + answer + '".';
-            }, function () {
-                $scope.status = 'You cancelled the dialog.';
-            });
+    $scope.manageTableGroup = function(){
+        $state.go('layout.manageTableGroup');
     }
 
-    function ViewTableGroupControl($scope, $mdDialog) {
-        $scope.hide = function () {
-            $mdDialog.hide();
-        };
-
-        $scope.cancel = function () {
-            $mdDialog.cancel();
-        };
-
-        $scope.answer = function (answer) {
-            $mdDialog.hide(answer);
-        };
-
-        $scope.selected = [];
-        $scope.query = {
-            order: 'name',
-            limit: 5,
-            page: 1
-        };
-        $scope.options = {
-            rowSelection: false,
-            multiSelect: false,
-            autoSelect: true,
-            decapitate: false,
-            largeEditDialog: false,
-            boundaryLinks: false,
-            limitSelect: true,
-            pageSelect: true
-        };
-        $scope.limitOptions = [5, 10, 15];
-    
-        $scope.logOrder = function (order) {
-            console.log('order: ', order);
-        };
-        $scope.logPagination = function (page, limit) {
-            console.log('page: ', page);
-            console.log('limit: ', limit);
-        }
-
-        function init(){
-            
-            apiService.viewTableGroup().then(function(data){
-                $scope.tableGroups = data;
-            },
-            function(){
-                
-            })
-        }
-        init();
-    }
 }])    
