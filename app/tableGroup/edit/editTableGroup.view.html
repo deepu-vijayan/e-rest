@@ -1,0 +1,53 @@
+<md-content laout="column" flex>
+    <md-card>
+
+        <md-toolbar class="md-table-toolbar md-default" ng-hide="filter.show">
+            <div class="md-toolbar-tools">
+                <h2 class="md-title">Edit Table Group</h2>
+                <div flex></div>
+
+            </div>
+        </md-toolbar>
+    </md-card>
+    <md-card>
+        <div class="card-body card-padding">
+            <form name="editTableGroupForm">
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Name</label>
+                            <input ng-model="tableGroup.name" required>
+                            <div ng-messages="editTableGroupForm.name.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please fill name.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <md-checkbox ng-model="tableGroup.status" aria-label="Status" ng-checked="tableGroup.status" class="md-primary md-align-center-center" flex>
+                                    Status
+                        </md-input-container>
+                    </div>
+                </div>
+
+
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <div class="label" >Number of Tables
+                            <md-button class="md-fab md-primary" ng-click="showAdvanced($event)">
+                                {{tableGroup.noTables}}
+                            </md-button></div>
+                        </md-input-container>
+                    </div> 
+                </div>
+
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button class="md-raised md-primary"><i class="material-icons">done</i>Save</md-button>
+                    <md-button ng-disabled="true" class="md-raised md-primary"><i class="material-icons">clear</i>Reset</md-button>
+                    <md-button class="md-raised" ng-click="cancel()"><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
+                </section>
+            </form>
+        </div>
+    </md-card>
+</md-content>

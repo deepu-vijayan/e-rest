@@ -9,6 +9,10 @@
           <md-tooltip>Search / Filter</md-tooltip>
           <md-icon>filter_list</md-icon>
         </md-button>
+        <md-button class="md-icon-button" ng-click="addTableGroup()">
+          <md-tooltip>Add Table Group</md-tooltip>
+          <md-icon>add</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
 
@@ -17,7 +21,7 @@
         <md-icon>search</md-icon>
         <form flex name="filter.form">
           <input type="text" ng-model="query.filter" ng-model-options="filter.options" placeholder="search" class="ng-pristine ng-valid ng-touched"
-            aria-invalid="false" >
+            aria-invalid="false">
         </form>
         <md-button class="md-icon-button" ng-click="filter.show = false">
           <md-icon>close</md-icon>
@@ -30,16 +34,36 @@
       <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected">
         <thead md-head md-order="query.order" md-on-reorder="logOrder">
           <tr md-row>
-            <th md-column md-order-by="name"><span>Name</span></th>
+            <th md-column md-order-by="name">
+              <span>Name</span>
+            </th>
             <th md-column md-numeric md-order-by="status">Status</th>
-            <th md-column md-numeric >Action</th>
+            <th md-column></th>
+            <th md-column md-numeric>Action</th>
           </tr>
         </thead>
         <tbody md-body>
           <tr md-row md-select="tableGroups" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="tableGroup in tableGroups.records | filter: query.filter | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
             <td md-cell>{{tableGroup.name}}</td>
-            <td md-cell><label ng-if="tableGroup.status==1">Active</label><label ng-if="tableGroup.status==0">Inactive</label></td>
-            <td md-cell><md-icon class="hyperlink" ng-click="editTableGroup(tableGroup)">mode_edit</md-icon>&nbsp;<md-icon class="hyperlink">delete_forever</md-icon></td>
+            <td md-cell>
+              <label ng-if="tableGroup.status==1">Active</label>
+              <label ng-if="tableGroup.status==0">Inactive</label>
+            </td>
+            <td md-cell class="grid-table-count">
+              <i class="material-icons hyper">add_box
+              <md-tooltip md-direction="left">Add Table</md-tooltip></i>
+              <label class="hyper" ng-click="viewTables()">
+                <img src="img/table_16X16.png" />({{tableGroup.noTables}}) 
+                <md-tooltip md-direction="top">View Table</md-tooltip></i>
+              </label>
+              
+              <i class="material-icons hyper">remove_circle
+              <md-tooltip md-direction="right">Remove Table</md-tooltip></i>
+            </td>
+            <td md-cell>
+              <md-icon class="hyperlink" ng-click="editTableGroup(tableGroup)">mode_edit</md-icon>&nbsp;
+              <md-icon class="hyperlink">delete_forever</md-icon>
+            </td>
           </tr>
         </tbody>
       </table>

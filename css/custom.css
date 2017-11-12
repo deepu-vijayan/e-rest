@@ -228,3 +228,9 @@ button i{
 .width-99{
   width: 99%;
 }
+.grid-table-count{
+  font-size: 1.1em !important;
+}
+.hyper{
+  cursor:pointer;
+}

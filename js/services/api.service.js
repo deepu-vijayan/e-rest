@@ -121,8 +121,8 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
         var data ={
             "count": 2,
             "records":[
-            {"id":1, "name":"Table group AC","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
-            {"id":2, "name":"Table group Non AC ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
+            {"id":1, "name":"Table group AC","status":1,"noTables": 12},
+            {"id":2, "name":"Table group Non AC ","status":1,"noTables": 45},
             ]
         } 
         def.resolve(data);

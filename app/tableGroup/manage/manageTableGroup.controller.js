@@ -38,4 +38,7 @@ erestaurant.controller("ManageTableGroupControl",["$scope", "apiService", "$stat
         })
     }
     init();
+    $scope.addTableGroup = function(){
+        $state.go('layout.addTableGroup');
+    }
 }])    
