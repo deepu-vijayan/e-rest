@@ -5,6 +5,7 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
     service.manageTax = manageTax;
     service.manageRestaurant = manageRestaurant;
     service.viewTableGroup = viewTableGroup;
+    service.manageTables = manageTables;
     return service;
 
     function login(data){
@@ -148,6 +149,39 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
             {"id":5, "name":"Aryas ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
             {"id":6, "name":"Dhanya ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"},
             {"id":7, "name":"New India ","group":"Group1","status":1, "street":"street1", "city": "city1", "district":"district", "state":"kerala", "pin":"234223", "status":"1", "country":"india", "tinNo": "8634635"}
+            ]
+        } 
+        def.resolve(data);
+        return def.promise;
+    }
+
+    function manageTables(){
+        var def = $q.defer();
+        var baseUrl = baseUrlService.getBaseUrl(true);
+        var url = baseUrl + "/manageTables";
+
+        // $http.post(url, data).then(function (data) {
+        //     def.resolve(data.data);
+        // }, function (error) {
+        //     def.reject("Network/Connection Error");
+        // });
+        var data ={
+            "count": 15,
+            "records":[
+            {"id":1, "name":"a","seats":"2"},
+            {"id":2, "name":"b","seats":"4"},
+            {"id":3, "name":"c","seats":"4"},
+            {"id":4, "name":"d","seats":"6"},
+            {"id":5, "name":"e","seats":"6"},
+            {"id":6, "name":"f","seats":"6"},
+            {"id":7, "name":"g","seats":"4"},
+            {"id":8, "name":"h","seats":"4"},
+            {"id":9, "name":"i","seats":"4"},
+            {"id":10, "name":"j","seats":"4"},
+            {"id":11, "name":"k","seats":"4"},
+            {"id":12, "name":"l","seats":"2"},
+            {"id":13, "name":"m","seats":"2"},
+            {"id":14, "name":"n","seats":"2"},
             ]
         } 
         def.resolve(data);

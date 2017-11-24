@@ -1,4 +1,4 @@
-erestaurant.controller("ManageTableGroupControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", "businessService", function($scope, apiService, $state, $mdSidenav, $timeout, $log, businessService){
+erestaurant.controller("ManageTableGroupControl",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", "businessService", "$mdDialog", "sharedService", function($scope, apiService, $state, $mdSidenav, $timeout, $log, businessService, $mdDialog, sharedService){
     $scope.selected = [];
     $scope.query = {
         order: 'name',
@@ -40,5 +40,9 @@ erestaurant.controller("ManageTableGroupControl",["$scope", "apiService", "$stat
     init();
     $scope.addTableGroup = function(){
         $state.go('layout.addTableGroup');
+    }
+    $scope.viewTables = function(ev){
+        sharedService.viewTables(ev);
+        
     }
 }])    

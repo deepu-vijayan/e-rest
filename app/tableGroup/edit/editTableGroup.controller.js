@@ -15,8 +15,8 @@ erestaurant.controller("EditTableGroupControl", ["$scope", "apiService", "$state
     }
     $scope.showAdvanced = function (ev) {
         $mdDialog.show({
-            controller: RestaurantInGroupControl,
-            templateUrl: 'app/group/edit/restaurantInGroup.view.html',
+            controller: ManageTablesControl,
+            templateUrl: 'app/table/manage/manageTables.view.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose: true,
@@ -28,7 +28,7 @@ erestaurant.controller("EditTableGroupControl", ["$scope", "apiService", "$state
                 $scope.status = 'You cancelled the dialog.';
             });
     };
-    function RestaurantInGroupControl($scope, $mdDialog) {
+    function ManageTablesControl($scope, $mdDialog) {
         $scope.hide = function () {
             $mdDialog.hide();
         };
@@ -69,7 +69,7 @@ erestaurant.controller("EditTableGroupControl", ["$scope", "apiService", "$state
 
         function init(){
             
-            apiService.manageRestaurant().then(function(data){
+            apiService.manageTables().then(function(data){
                 $scope.restaurantes = data;
             },
             function(){
