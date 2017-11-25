@@ -45,4 +45,7 @@ erestaurant.controller("ManageTableGroupControl",["$scope", "apiService", "$stat
         sharedService.viewTables(ev);
         
     }
+    $scope.addTable = function(ev, group){
+        sharedService.addTable(ev, group);
+    }
 }])    

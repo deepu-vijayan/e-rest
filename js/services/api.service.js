@@ -122,8 +122,8 @@ erestaurant.factory("apiService",["$http", "$q", "baseUrlService", function ($ht
         var data ={
             "count": 2,
             "records":[
-            {"id":1, "name":"Table group AC","status":1,"noTables": 12},
-            {"id":2, "name":"Table group Non AC ","status":1,"noTables": 45},
+            {"id":1, "name":"Table group AC","status":1,"noTables": 12, "restaurantName": "Royal"},
+            {"id":2, "name":"Table group Non AC ","status":1,"noTables": 45, "restaurantName": "Royal"},
             ]
         } 
         def.resolve(data);

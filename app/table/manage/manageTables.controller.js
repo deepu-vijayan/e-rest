@@ -1,2 +1,0 @@
-erestaurant.controller("ManageTablesController",["$scope", "apiService", "$state", "$mdSidenav", "$timeout", "$log", "businessService", "$mdDialog", function($scope, apiService, $state, $mdSidenav, $timeout, $log, businessService, $mdDialog){
-}]);    

@@ -1,0 +1,52 @@
+<md-dialog aria-label="Mango (Fruit)">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Add Table</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+            <i class="material-icons">highlight_off</i>
+          </md-button>
+        </div>
+      </md-toolbar>
+  
+      <md-dialog-content>
+        <div class="card-body card-padding" style="width:550px">
+            <form name="addTableForm">
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Restaurant Name</label>
+                            <input ng-model="tableDetails.restaurantName" required>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Table Group</label>
+                            <input ng-model="tableDetails.name">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex>
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Table Name</label>
+                            <input ng-model="tableDetails.tablename" required>
+                            <div ng-messages="addTableForm.name.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Please fill name.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                    <md-button class="md-raised md-primary"><i class="material-icons">done</i>Save</md-button>
+                    <md-button ng-disabled="true" class="md-raised md-primary"><i class="material-icons">clear</i>Reset</md-button>
+                    <md-button class="md-raised" ng-click="cancel()"><i class="material-icons">keyboard_backspace</i>Cancel</md-button>
+                </section>
+            </form>
+        </div>
+
+
+      </md-dialog-content>
+  </md-dialog>
